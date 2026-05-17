@@ -426,32 +426,23 @@ export default function App() {
                   <h5 className="text-xl font-black text-slate-800 tracking-tight">{item.title}</h5>
                 </div>
                 <div className="aspect-video bg-slate-900 rounded-[30px] overflow-hidden shadow-xl border-4 border-white group-hover:scale-[1.01] transition-transform duration-500 relative">
-                  {/* Real video tag as primary content */}
-                  <video 
-                    className="absolute inset-0 w-full h-full object-cover"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    poster={`https://images.unsplash.com/photo-${item.day === 1 ? '1504280390367-361c6d9f38f4' : item.day === 2 ? '1441974231531-c6227db76b6e' : item.day === 3 ? '1501785888041-af3ef285b470' : '1502675135487-e971002a6adb'}?auto=format&fit=crop&q=80&w=1200`}
-                  >
-                    <source 
-                      src={item.day === 4 ? '/第四天.mp4' : `/day${item.day}.mp4`} 
-                      type="video/mp4" 
-                    />
-                  </video>
-                  
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent pointer-events-none" />
-                  
-                  {/* Play Button Overlay (Purely Visual) */}
-                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-50 group-hover:opacity-100 transition-opacity">
-                    <motion.div 
-                      whileHover={{ scale: 1.2 }}
-                      className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white border border-white/20 shadow-2xl"
-                    >
-                      <Youtube size={32} />
-                    </motion.div>
+                  {/* Google Drive Video Preview Iframe */}
+                  <div className="absolute inset-0 w-full h-full">
+                    <iframe
+                      src={`https://drive.google.com/file/d/${
+                        item.day === 1 ? '1KjJf0R7xXrLOBLJjy_CoKUJ2cy0vFftA' :
+                        item.day === 2 ? '1G1rbRX1roAiM6_I-8RHnBDEdCSFDNx47' :
+                        item.day === 3 ? '1PV3Au-6Z_h7tnZBhxa-dJqsA5y7m9x1a' :
+                        '1KCmPUQcFQzx5ERWnTpjIgkaxfrEq3tCr'
+                      }/preview`}
+                      className="w-full h-full border-0"
+                      allow="autoplay; encrypted-media"
+                      allowFullScreen
+                      title={item.title}
+                    ></iframe>
                   </div>
+                  
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/10 via-transparent to-transparent pointer-events-none" />
                 </div>
               </div>
             ))}
@@ -710,7 +701,7 @@ export default function App() {
                 className="relative z-10 aspect-[3/4.5] w-full rounded-[40px] overflow-hidden group shadow-[0_50px_100px_-20px_rgba(0,0,0,0.1)] border-8 border-white"
               >
                  <img 
-                  src="https://drive.google.com/thumbnail?id=1LU0g1CB1xm4ApKYZir2wITqGpxISkVVu&sz=w1200" 
+                  src="https://lh3.googleusercontent.com/d/1LU0g1CB1xm4ApKYZir2wITqGpxISkVVu" 
                   alt="郭人瑄 Profile" 
                   onError={(e) => {
                     e.currentTarget.src = "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=800";
