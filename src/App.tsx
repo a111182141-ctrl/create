@@ -493,6 +493,19 @@ export default function App() {
                 研究如何轉化手繪草圖為高精度的 3D 角色模型。本作品專注於角色肢體與服裝紋理的細節表現，並應用於多媒體互動領域。
               </p>
               
+              <div className="pt-4">
+                <a 
+                  href="https://studio.tripo3d.ai/workspace/generate/girl-character-wearing-brown-plaid-dress-with-white-shirt-and-white-sn-c055b1e9-1da1-4c8f-805a-29dff24b9e35"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-4 px-10 py-5 bg-vibrant-primary text-white rounded-2xl font-black text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl shadow-vibrant-primary/20"
+                >
+                  <Box size={20} />
+                  <span>View 3D Model Link</span>
+                  <ExternalLink size={18} className="group-hover:translate-x-1 transition-transform" />
+                </a>
+              </div>
+              
               <div className="grid grid-cols-2 gap-4">
                 {[
                   { label: "Polygons", val: "450k+" },
