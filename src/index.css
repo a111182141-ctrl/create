@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", "Georgia", serif;
+  --font-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+  
+  --color-vibrant-bg: #f8fafc;
+  --color-vibrant-primary: #ec4899;
+  --color-vibrant-secondary: #06b6d4;
+  --color-vibrant-accent: #8b5cf6;
+  --color-vibrant-text: #0f172a;
+}
+
+@layer base {
+  body {
+    @apply bg-vibrant-bg text-vibrant-text;
+  }
+}
